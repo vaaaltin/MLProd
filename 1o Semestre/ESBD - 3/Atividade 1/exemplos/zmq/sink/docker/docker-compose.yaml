@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  ventilator:
+    build:
+      context: ventilator/.
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5555:5555
+
+  sink:
+    build:
+      context: sink/.
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 5556:5556
