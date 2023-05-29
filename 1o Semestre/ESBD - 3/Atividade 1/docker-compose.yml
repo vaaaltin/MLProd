@@ -1,0 +1,49 @@
+version: "3"
+services:
+  collector:
+    build:
+      context: ./collector
+      dockerfile: Dockerfile
+    container_name: collector
+    command: python collector.py
+    network_mode: "host"
+
+  consumer:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    depends_on:
+      - collector
+    container_name: consumer
+    command: python consumer.py
+    network_mode: "host"
+  
+  consumer1:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    depends_on:
+      - collector
+    container_name: consumer1
+    command: python consumer.py
+    network_mode: "host"
+
+  consumer2:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    depends_on:
+      - collector
+    container_name: consumer2
+    command: python consumer.py
+    network_mode: "host"
+
+  producer:
+    build:
+      context: ./producer
+      dockerfile: Dockerfile
+    depends_on:
+      - consumer
+    container_name: producer
+    command: python producer.py
+    network_mode: "host"

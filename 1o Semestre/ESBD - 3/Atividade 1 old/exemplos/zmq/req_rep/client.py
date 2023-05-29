@@ -6,7 +6,7 @@ https://zguide.zeromq.org/docs/chapter3/#The-REQ-to-REP-Combination
 """
 
 import zmq
-
+import time
 
 def main():
     context = zmq.Context()
@@ -15,11 +15,11 @@ def main():
     socket.connect("tcp://0.0.0.0:5555")
 
     while True:
-        _ = input("press [ENTER] to send")
+        # _ = input("press [ENTER] to send")
         socket.send_string("PING!")
         print("Sent PING!")
         print("Recieved", socket.recv_string())
-
+        time.sleep(3)
 
 if __name__ == "__main__":
     main()

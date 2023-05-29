@@ -7,7 +7,7 @@ https://zguide.zeromq.org/docs/chapter3/#The-REQ-to-REP-Combination
 
 
 import zmq
-
+import time
 
 def main():
     context = zmq.Context()
@@ -17,6 +17,7 @@ def main():
 
     while True:
         _ = socket.recv_string()
+        time.sleep(3)
         socket.send_string("PONG!")
         print("Sent PONG!")
 
