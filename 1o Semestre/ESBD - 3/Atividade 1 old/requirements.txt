@@ -1,4 +1,0 @@
-minio
-scikit-learn
-numpy
-keras
