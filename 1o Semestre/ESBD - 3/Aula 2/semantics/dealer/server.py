@@ -64,6 +64,7 @@ def comparer_thread():
             ):
                 MSGS.append(msg)
                 msgs_to_remove.append(msg)
+                print(f"MSG {msg['epoch']} did not respond")
 
         for msg in msgs_to_remove:
             SENT_MSGS.remove(msg)
@@ -83,6 +84,7 @@ def main():
 
     Thread(target=reciever_thread).start()
     Thread(target=dispatcher_thread).start()
+    Thread(target=comparer_thread).start()
 
     print("Available topics to consume: ", c.list_topics().topics)
     c.subscribe([TOPIC])

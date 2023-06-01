@@ -1,4 +1,5 @@
 from pprint import pprint
+from uuid import uuid4
 
 from confluent_kafka import Consumer
 
@@ -6,8 +7,8 @@ from confluent_kafka import Consumer
 c = Consumer(
     {
         "bootstrap.servers": "localhost:9092",
-        "group.id": "python-consumer",
-        "auto.offset.reset": "earliest",
+        "group.id": f"python-consumer-{uuid4()}",
+        "auto.offset.reset": "latest",
     }
 )
 print("Kafka Consumer has been initiated...")

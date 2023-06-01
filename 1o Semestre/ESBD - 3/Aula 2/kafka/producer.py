@@ -1,5 +1,4 @@
-
-# pip install confluent-kafka
+# pip install confluent-kafka faker
 import json
 import random
 import time

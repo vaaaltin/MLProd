@@ -27,7 +27,7 @@ while True:
     response = str(request["epoch"])
 
     # data = json.loads(request["data"])
-    input(f"Press [ENTER] to check redis for {response}")
+    # input(f"Press [ENTER] to check redis for {response}")
     if redis_client.get(request["epoch"]):
         print("already rcvd")
     else:
@@ -40,7 +40,7 @@ while True:
             p.flush()
             print(f"published to {PUB_TOPIC}")
 
-        input("Press [ENTER] to send response back to the server and save to redis")
+        # input("Press [ENTER] to send response back to the server and save to redis")
         # Store the message ID in Redis with an expiration time of 24 hours
         redis_client.setex(response, 24 * 60 * 60, 1)
 

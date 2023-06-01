@@ -6,7 +6,6 @@ import zmq
 
 def main():
     context = zmq.Context()
-    print(context)
     socket = context.socket(zmq.PULL)
 
     socket.connect("tcp://0.0.0.0:5555")

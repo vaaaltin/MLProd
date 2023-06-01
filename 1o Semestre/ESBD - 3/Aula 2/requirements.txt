@@ -1,0 +1,4 @@
+confluent-kafka
+faker
+redis
+zmq
