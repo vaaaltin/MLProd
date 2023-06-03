@@ -1,0 +1,51 @@
+version: '3.7'
+services:
+  redis:
+    image: redis/redis-stack:latest
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+      - 8001:8001
+      # command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - redis_cache:/data
+      # - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+
+  db:
+    image: postgres:15.1
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: adminer
+    restart: always
+    ports:
+      - 8000:8080
+  # mongo:
+  #   image: mongo
+  #   restart: always
+  #   container_name: mongo
+  #   ports:
+  #     - 7017:27017
+  #   expose:
+  #     - 27017
+  #   volumes:
+  #     - mongodb_data:/data/db
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: admin
+  #     MONGO_INITDB_ROOT_PASSWORD: admin
+
+volumes:
+  # mongodb_data:
+  postgres_data:
+  redis_cache:
