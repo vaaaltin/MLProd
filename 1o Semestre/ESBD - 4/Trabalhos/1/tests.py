@@ -10,6 +10,7 @@ class RomanToIntegerTests(unittest.TestCase):
         self.assertEqual(RomanToInteger.romanToInt('C'), 100)
         self.assertEqual(RomanToInteger.romanToInt('D'), 500)
         self.assertEqual(RomanToInteger.romanToInt('M'), 1000)
+        self.assertEqual(RomanToInteger.romanToInt('Z'), 'NA')
 
     def test_two_digits(self):
         self.assertEqual(RomanToInteger.romanToInt('IV'), 4)

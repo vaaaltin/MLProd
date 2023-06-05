@@ -22,7 +22,9 @@ class RomanToInteger():
         following_numbers = 1
 
         while(i<len(s)):
-
+            if s[i] not in romanos:
+                return 'NA'
+            
             if i>0:
                 if s[i]==s[i-1]:
                     following_numbers += 1
