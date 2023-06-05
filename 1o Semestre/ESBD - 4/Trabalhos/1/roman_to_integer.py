@@ -1,41 +1,33 @@
 class RomanToInteger():
     @staticmethod
-    def romanToInt(roman):
-        roman_values = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
+    def romanToInt(s: str) -> int:
+        romanos = {
+            "I":1,
+            "V":5,
+            "X":10,
+            "L":50,
+            "C":100,
+            "D":500,
+            "M":1000,
+            "IV":4,
+            "IX":9,
+            "XL":40,
+            "XC":90,
+            "CD":400,
+            "CM":900
         }
 
-        total = 0
-        prev_value = 0
+        i = 0
+        num = 0
         following_numbers = 1
+        previous = 0
 
-        for i in range(len(roman) - 1, -1, -1):
-            current_value = roman_values[roman[i]]
-
-            if current_value >= prev_value:
-                total += current_value
-            # elif current_value < prev_value and current_value != 1:
-            #     return 'NA'
+        while(i<len(s)):
+            if i+1<len(s) and s[i:i+2] in romanos:
+                num += romanos[s[i:i+2]]
+                i += 2
             else:
-                total -= current_value
+                num += romanos[s[i]]
+                i += 1
             
-            #check if have more than 3 numbers in sequence
-            if prev_value == current_value:
-                following_numbers+=1
-                if following_numbers > 3:
-                    return 'NA'
-            else:
-                following_numbers = 1
-            print('i: ', i)
-            print('anterior: ', prev_value)
-            print('atual: ', current_value)
-            prev_value = current_value
-
-        return total
-
+        return num
