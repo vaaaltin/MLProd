@@ -23,3 +23,6 @@ class FibonacciTest(unittest.TestCase):
     
     def test_fib06(self):
         self.assertEqual(MathSamples.fibonacci(6),8)
+
+if __name__ == '__main__':
+    unittest.main()
