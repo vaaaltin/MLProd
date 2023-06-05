@@ -36,6 +36,7 @@ class RomanToIntegerTests(unittest.TestCase):
 
     def test_sequence_bigger_after(self):
         self.assertEqual(RomanToInteger.romanToInt('DM'), 'NA')
+        self.assertEqual(RomanToInteger.romanToInt('MMMCMXCIXD'), 'NA')
 
 if __name__ == '__main__':
     unittest.main()

@@ -20,9 +20,20 @@ class RomanToInteger():
         i = 0
         num = 0
         following_numbers = 1
-        previous = 0
 
         while(i<len(s)):
+
+            if i>0:
+                if s[i]==s[i-1]:
+                    following_numbers += 1
+                    if following_numbers == 4:
+                        return 'NA'
+                else:
+                    following_numbers = 1
+
+                if romanos[s[i]] > romanos[s[i-1]] and romanos[s[i-1]] != 1:
+                    return 'NA'
+                
             if i+1<len(s) and s[i:i+2] in romanos:
                 num += romanos[s[i:i+2]]
                 i += 2
