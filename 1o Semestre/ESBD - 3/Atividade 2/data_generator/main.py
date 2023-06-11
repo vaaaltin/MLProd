@@ -14,7 +14,7 @@ TOPIC = "creditcard_transactions"
 
 
 def main():
-    csv_data = pd.read_csv("../creditcard.csv")
+    csv_data = pd.read_csv("./creditcard.csv")
     csv_data.drop("Time", axis=1, inplace=True)
     csv_data.drop("Class", axis=1, inplace=True)
 
@@ -22,7 +22,7 @@ def main():
     while True:
         # input("type")
         row = csv_data.sample()
-        data = {"vals": row.values.tolist()[0], "transactionId": str(uuid4())}
+        data = {"vals": row.values.tolist()[0], "id": str(uuid4())}
 
         m = json.dumps(data)
         p.produce(TOPIC, m.encode("utf-8"))
@@ -30,7 +30,7 @@ def main():
         # print(f"Sent Transaction, id = {i}")
         i += 1
         time.sleep(random.random())
-        if i % 50 == 0:
+        if i % 100 == 0:
             print(f"Sent Transaction, id = {i}")
 
 
