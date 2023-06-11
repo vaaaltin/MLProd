@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  minio:
+    container_name: minio
+    image: quay.io/minio/minio:latest
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+      - MINIO_ADDRESS=:8005
+      - MINIO_CONSOLE_ADDRESS=:8006
+    ports:
+      - '8005:8005'
+      - '8006:8006'
+    volumes:
+      - ./data:/data
+    # volumes:
+    #   - minio_data:/data
+    command: server --console-address ":8006" /data
+  # dispatcher:
+  #   container_name: flower_dispatcher
+  #   build:
+  #     context: dispatcher
+  #     dockerfile: Dockerfile
+  #   network_mode: host

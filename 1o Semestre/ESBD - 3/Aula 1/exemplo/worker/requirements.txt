@@ -1,0 +1,10 @@
+tensorflow==2.2.0                       
+streamlit==0.65.2                       
+numpy==1.19.1                       
+opencv_python==4.4.0.42                       
+Pillow==7.2.0
+torch
+torchvision
+pyzmq
+zmq
+minio
