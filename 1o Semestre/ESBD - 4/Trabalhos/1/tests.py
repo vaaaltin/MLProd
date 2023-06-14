@@ -11,6 +11,7 @@ class RomanToIntegerTests(unittest.TestCase):
         self.assertEqual(RomanToInteger.romanToInt('D'), 500)
         self.assertEqual(RomanToInteger.romanToInt('M'), 1000)
         self.assertEqual(RomanToInteger.romanToInt('Z'), 'NA')
+        self.assertEqual(RomanToInteger.romanToInt('1'), 'NA')
 
     def test_two_digits(self):
         self.assertEqual(RomanToInteger.romanToInt('IV'), 4)
@@ -19,6 +20,7 @@ class RomanToIntegerTests(unittest.TestCase):
         self.assertEqual(RomanToInteger.romanToInt('XC'), 90)
         self.assertEqual(RomanToInteger.romanToInt('CD'), 400)
         self.assertEqual(RomanToInteger.romanToInt('CM'), 900)
+        self.assertEqual(RomanToInteger.romanToInt('MZ'), 'NA')
 
     def test_multiple_digits(self):
         self.assertEqual(RomanToInteger.romanToInt('III'), 3)
@@ -30,7 +32,10 @@ class RomanToIntegerTests(unittest.TestCase):
         self.assertEqual(RomanToInteger.romanToInt('CDLIX'), 459)
         self.assertEqual(RomanToInteger.romanToInt('CMXCIX'), 999)
         self.assertEqual(RomanToInteger.romanToInt('MMMCMXCIX'), 3999)
-    
+
+    def test_no_caractere(self):
+        self.assertEqual(RomanToInteger.romanToInt(''), 'NA')
+
     def test_sequence_four_equal(self):
         self.assertEqual(RomanToInteger.romanToInt('IIII'), 'NA')
         self.assertEqual(RomanToInteger.romanToInt('IVIIII'),'NA')

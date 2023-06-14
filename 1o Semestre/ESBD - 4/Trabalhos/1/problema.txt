@@ -1,0 +1,15 @@
+Com base na descrição acima e considerando que você está utilizando a técnica de desenvolvimento dirigida por testes (TDD), redija o conjunto de testes que deveria ser utilizado para que, ao ter uma implementação em que todos os testes sejam aprovados, entende-se que a solução deste problema estará completa.
+
+Em seguida, siga os passos do TDD para a implementação do código que resolva o problema acima, refatorando o mesmo caso necessário, até que todos os seus testes passem.
+
+Ao final deste processo você será capaz de responder às seguintes perguntas:
+
+Qual(is) critério(s) de teste utilizei na elaboração do conjunto de teste?
+
+Quantos testes foram necessários para satisfazê-los?
+
+Qual o tamanho da solução proposta da primeira versão até a última em termos de linhas de código?
+
+Você ficou satisfeito com a solução desenvolvida em termos de sua qualidade? Por quê? 
+
+Na sua opinião, quais são as principais vantagens e desvantagens no uso do TDD até aqui?
