@@ -20,7 +20,9 @@ class RomanToInteger():
         i = 0
         num = 0
         following_numbers = 1
-
+        if len(s)==0:
+            return 'NA'
+        
         while(i<len(s)):
             if s[i] not in romanos:
                 return 'NA'
