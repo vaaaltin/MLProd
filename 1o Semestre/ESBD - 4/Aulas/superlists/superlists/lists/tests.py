@@ -4,7 +4,7 @@ from django.http import HttpRequest
 from django.template.loader import render_to_string
 
 from lists.views import home_page
-
+from lists.models import Item
 
 class HomePageTest(TestCase):
 
@@ -20,3 +20,23 @@ class HomePageTest(TestCase):
 		response = self.client.post('/', data={'item_text': 'A new list item'})
 		self.assertIn('A new list item', response.content.decode())
 		self.assertTemplateUsed(response, 'home.html')
+
+class ItemModelTest(TestCase):
+	def test_saving_and_retrieving_items(self):
+		first_item = Item()
+		first_item.text = 'The first (ever) list item'
+		first_item.save()
+
+		first_item = Item()
+		first_item.text = 'Item the second'
+		first_item.save()
+
+		saved_items = Item.objects.all()
+		self.assertEquals(saved_items.count(), 2)
+
+		first_saved_item = saved_items[0]
+		second_saved_item = saved_items[1]
+
+		self.assertEquals(first_saved_item.text, 'The first (ever) list item')
+		self.assertEquals(second_saved_item.text, 'Item the second')
+
