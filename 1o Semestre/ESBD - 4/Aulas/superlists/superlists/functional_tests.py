@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import unittest
+import logging
 
-class NewVisitorTest(unittest.TestCase):
-
+class NewVisitorTest(unittest.TestCase):    
 	def setUp(self):
 		self.browser = webdriver.Chrome()
 
@@ -20,23 +21,23 @@ class NewVisitorTest(unittest.TestCase):
 		# Ela percebe que o título da página e o cabeçalho mencionam
 		# listas de tarefas (to-do)
 
-		self.assertIn('To-Do', self.browser.title)
-		header_text = self.browser.find_element_by_tag_name('h1').text
-		self.assertIn('To-Do', header_text)
+		self.assertIn("To-Do", self.browser.title)
+		header_text = self.browser.find_element(By.TAG_NAME, "h1").text
+		self.assertIn("To-Do", header_text)
 		
 		# Ela é convidada a inserir um item de tarefa imediatamente
 
-		inputbox = self.browser.find_element_by_id('id_new_item')
+		inputbox = self.browser.find_element(By.ID, "id_new_item")
 		self.assertEqual(
-			inputbox.get_attribute('placeholder'),
-			'Enter a to-do item'
+			inputbox.get_attribute("placeholder"),
+			"Enter a to-do item"
 		)
 
 		# Ela digita "Buy peacock feathers" (Comprar penas de pavão)
 		# em uma nova caixa de texto (o hobby de Edith é fazer iscas
 		# para pesca com fly)
 
-		inputbox.send_keys('Buy peacock feathers')
+		inputbox.send_keys("Buy peacock feathers")
 
 
 		# Quando ela tecla enter, a página é atualizada, e agora
@@ -46,10 +47,12 @@ class NewVisitorTest(unittest.TestCase):
 		inputbox.send_keys(Keys.ENTER)
 		time.sleep(1)
 
-		table = self.browser.find_element_by_id('id_list_table')
-		rows = table.find_elements_by_tag_name('tr')
+		table = self.browser.find_element(By.ID, "id_list_table")
+		rows = table.find_element(By.TAG_NAME, "tr")
+
 		self.assertTrue(
-			any(row.text == '1: Buy peacock feathers' for row in rows)
+			any(row.text == "1: Buy peacock feathers" for row in rows),
+			"New to-do item not appear in table"
 		)
 
 		# Ainda continua havendo uma caixa de texto convidando-a a 
@@ -57,7 +60,7 @@ class NewVisitorTest(unittest.TestCase):
 		# make a fly" (Usar penas de pavão para fazer um fly - 
 		# Edith é bem metódica)
 
-		self.fail('Finish the test!')
+		self.fail("Finish the test!")
 
 		# A página é atualizada novamente e agora mostra os dois
 		# itens em sua lista
@@ -70,5 +73,5 @@ class NewVisitorTest(unittest.TestCase):
 
 		# Satisfeita, ela volta a dormir
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	unittest.main()
