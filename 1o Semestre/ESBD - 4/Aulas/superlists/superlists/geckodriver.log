@@ -37,3 +37,16 @@ DevTools listening on ws://127.0.0.1:51095/devtools/browser/913c4e29-edce-45f1-9
 1688239781773	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
 1688239781836	Marionette	INFO	Stopped listening on port 43639
 console.error: (new Error("IndexedDB: main/doh-config list() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.jsm", 18))
+1688240146996	geckodriver	INFO	Listening on 127.0.0.1:53257
+1688240146998	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "45097" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilegZMXMl"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1688240148281	Marionette	INFO	Marionette enabled
+1688240148283	Marionette	INFO	Listening on port 45895
+Read port: 45895
+WebDriver BiDi listening on ws://127.0.0.1:45097
+1688240148370	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:45097/devtools/browser/9f5e1b39-6756-478b-82d7-41ede8e620bb
+1688240149559	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1688240149613	Marionette	INFO	Stopped listening on port 45895
