@@ -48,11 +48,11 @@ class NewVisitorTest(unittest.TestCase):
 		time.sleep(1)
 
 		table = self.browser.find_element(By.ID, "id_list_table")
-		rows = table.find_element(By.TAG_NAME, "tr")
+		rows = table.find_elements(By.TAG_NAME, "tr")
 
 		self.assertTrue(
 			any(row.text == "1: Buy peacock feathers" for row in rows),
-			"New to-do item not appear in table"
+			f"New to-do item not appear in table. Content were: \n{table.text}"
 		)
 
 		# Ainda continua havendo uma caixa de texto convidando-a a 
