@@ -23,3 +23,17 @@ console.error: ({})
 DevTools listening on ws://127.0.0.1:53331/devtools/browser/06d09c0f-6512-45b4-b03a-f6f03f2ba7f9
 1688238141155	Marionette	INFO	Stopped listening on port 35725
 .gitignore
+1688239779414	geckodriver	INFO	Listening on 127.0.0.1:32837
+1688239779416	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "51095" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileFzzBBU"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1688239780639	Marionette	INFO	Marionette enabled
+1688239780642	Marionette	INFO	Listening on port 43639
+WebDriver BiDi listening on ws://127.0.0.1:51095
+Read port: 43639
+1688239780840	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:51095/devtools/browser/913c4e29-edce-45f1-93d2-8714cab466db
+1688239781773	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1688239781836	Marionette	INFO	Stopped listening on port 43639
+console.error: (new Error("IndexedDB: main/doh-config list() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.jsm", 18))
