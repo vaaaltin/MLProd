@@ -1,11 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from django.test import LiveServerTestCase
 import time
 import unittest
-import logging
 
-class NewVisitorTest(unittest.TestCase):    
+class NewVisitorTest(LiveServerTestCase):    
 	def setUp(self):
 		self.browser = webdriver.Chrome()
 
@@ -21,7 +21,7 @@ class NewVisitorTest(unittest.TestCase):
 		# Edith ouviu falar de uma nova aplicação online interessante
 		# para lista de tarefas. Ela decide verificar a homepage
 
-		self.browser.get('http://localhost:8000')
+		self.browser.get(self.live_server_url)
 
 		# Ela percebe que o título da página e o cabeçalho mencionam
 		# listas de tarefas (to-do)
@@ -79,6 +79,3 @@ class NewVisitorTest(unittest.TestCase):
         # Ela acessa essa URL -- sua lista de tarefas continua lá.
 
 		# Satisfeita, ela volta a dormir
-
-if __name__ == '__main__':
-	unittest.main()
