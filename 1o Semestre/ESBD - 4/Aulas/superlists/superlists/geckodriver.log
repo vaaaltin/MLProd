@@ -166,3 +166,22 @@ console.error: ({})
 DevTools listening on ws://127.0.0.1:47951/devtools/browser/8bf4177d-7b16-467a-9760-92f66b10b77b
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:59627."
 1688350501639	Marionette	INFO	Stopped listening on port 37627
+1688350658481	geckodriver	INFO	Listening on 127.0.0.1:39181
+1688350658985	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "55319" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileSZwJiS"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: ManageChildProcess(glxtest): poll failed: Success
+
+[GFX1-]: glxtest: ManageChildProcess failed
+
+[GFX1-]: No GPUs detected via PCI
+
+1688350663533	Marionette	INFO	Marionette enabled
+1688350663540	Marionette	INFO	Listening on port 38839
+Read port: 38839
+WebDriver BiDi listening on ws://127.0.0.1:55319
+1688350663681	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:55319/devtools/browser/0da6f8ad-6322-4a95-b9af-a006a03ffca8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:49793."
+1688350666127	Marionette	INFO	Stopped listening on port 38839
