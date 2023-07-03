@@ -7,7 +7,6 @@ from lists.views import home_page
 from lists.models import Item
 
 class HomePageTest(TestCase):
-
 	def test_root_url_resolves_to_home_page_view(self):
 		found = resolve('/')
 		self.assertEquals(found.func, home_page)
@@ -20,18 +19,18 @@ class HomePageTest(TestCase):
 		self.client.get('/')
 		self.assertEquals(Item.objects.count(), 0)
 
+class NewListTest(TestCase):
 	def test_can_save_a_POST_request(self):
-		self.client.post('/', data={'item_text': 'A new list item'})
+		self.client.post('/lists/new', data={'item_text': 'A new list item'})
 
 		self.assertEquals(Item.objects.count(), 1)
 		new_item = Item.objects.first()
 		self.assertEquals(new_item.text, 'A new list item')
 
 	def test_redirects_after_POST(self):
-		response = self.client.post('/', data={'item_text': 'A new list item'})
+		response = self.client.post('/lists/new', data={'item_text': 'A new list item'})
 
-		self.assertEquals(response.status_code, 302)
-		self.assertEquals(response['location'], '/lists/the-only-list-in-the-world/')
+		self.assertRedirects(response, '/lists/the-only-list-in-the-world/')
 
 
 class ListViewTest(TestCase):

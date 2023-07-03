@@ -102,3 +102,41 @@ DevTools listening on ws://127.0.0.1:35477/devtools/browser/8d2c0f77-e211-4504-b
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:53809."
 1688347437532	Marionette	INFO	Stopped listening on port 38773
 !!! error running onStopped callback: TypeError: callback is not a function
+1688348389055	geckodriver	INFO	Listening on 127.0.0.1:41191
+1688348389560	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "38837" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilek2CzGN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: ManageChildProcess(glxtest): poll failed: Success
+
+[GFX1-]: glxtest: ManageChildProcess failed
+
+[GFX1-]: No GPUs detected via PCI
+
+1688348394104	Marionette	INFO	Marionette enabled
+1688348394108	Marionette	INFO	Listening on port 39439
+Read port: 39439
+WebDriver BiDi listening on ws://127.0.0.1:38837
+1688348394256	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:38837/devtools/browser/5b5fa1c1-f0d3-4844-8db4-a2d6a8802fa1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:45419."
+1688348406741	Marionette	INFO	Stopped listening on port 39439
+1688348584266	geckodriver	INFO	Listening on 127.0.0.1:38913
+1688348584770	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "45721" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilenm8keI"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: ManageChildProcess(glxtest): poll failed: Success
+
+[GFX1-]: glxtest: ManageChildProcess failed
+
+[GFX1-]: No GPUs detected via PCI
+
+1688348589263	Marionette	INFO	Marionette enabled
+1688348589271	Marionette	INFO	Listening on port 39919
+Read port: 39919
+WebDriver BiDi listening on ws://127.0.0.1:45721
+1688348589411	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+DevTools listening on ws://127.0.0.1:45721/devtools/browser/6525ee6a-2282-447e-b395-dda1f22d87c9
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:46865."
+1688348601893	Marionette	INFO	Stopped listening on port 39919
