@@ -1,0 +1,31 @@
+Cenário 1 
+1. Aprendizado supervisionado. Pois, 
+2. Classificação binária
+3. Churns e não churns atuais, Idade, profissão, tipo de trabalho(remoto, híbrido,...), localização, consumo, histórico de uso, duração do contrato, tipo de plano
+
+Cenário 2
+1. Aprendizado supervisionado.
+2. Regressão
+3. Preço dos já vendidos, Localização, tamanho, quantidade de quartos, quantidade de banheiros, lareira(binário), piscina(binário), churrasqueira(binário), festeiro(binário).
+
+Cenário 3
+1. Aprendizado não-supervisionado.
+2. Clustering
+3. informações por região: renda média, idade média da população, densidade populacional, lojas de concorrência, transporte público
+
+Cenário 4
+1. Aprendizado supervisionado.
+2. Classificação binária.
+3. Histórico de confronto, jogo em casa ou fora, gols marcados e sofridos na competição, posse de bola por jogo, chutes a gol, equipe principal jogando, 
+
+Cenário 5
+1. Aprendizado Supervisionado.
+2. Classificação multiclasse
+3. Histórico de reclamações, texto da reclamação e a categoria correta, NLP para tratamento e análise dos textos, categorias dos departamentos existentes,
+
+Cenário 6
+Precisa-se avaliar a desistência de alunos em novas turmas. Temos apenas duas informações: logs de acesso do AVA, e se os alunos foram aprovados ou reprovados. Existem vários tipos de logs, que podem influenciar.
+Sendo um novo modelo por semana de semestre.
+1. Aprendizado supervisionado
+2. Classificação binária
+3. Separar logs que podem ter influência real, cálculo de métricas dos logs como média, dias consecutivos com acesso, dias consecutivos sem acesso, máximo de acesso em um dia, mínimo de acesso em um dia. 
