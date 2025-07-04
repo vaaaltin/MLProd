@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -25,7 +25,14 @@ def soma():
             return "op2 não informado", 400
 
     res = x + y
-    return '{} + {} = {}'.format(x,y,res)
+    response = {
+        'op1': x,
+        'op2': y,
+        'operacao': 'soma',
+        'resultado': res
+    }
+    return jsonify(response)
+
 
 @app.route('/subtracao', methods=['GET','POST'])
 def subtracao():
@@ -50,4 +57,10 @@ def subtracao():
             return "op2 não informado", 400
 
     res = x - y
-    return '{} - {} = {}'.format(x,y,res)
+    response = {
+        'op1': x,
+        'op2': y,
+        'operacao': 'subtracao',
+        'resultado': res
+    }
+    return jsonify(response)
