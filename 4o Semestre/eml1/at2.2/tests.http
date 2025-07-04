@@ -3,3 +3,13 @@ GET http://127.0.0.1:5000/soma
 ###
 
 GET http://127.0.0.1:5000/soma?op1=3&op2=5
+
+###
+
+POST http://127.0.0.1:5000/soma HTTP/1.1
+content-type: application/json
+
+{
+    "op1":3,
+    "op2":8
+}
