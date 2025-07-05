@@ -1,0 +1,6 @@
+POST http://127.0.0.1:5000/predizer_categoria HTTP/1.1
+content-type: application/json
+
+{
+    "descricao":" sou brinquedo sou livro"
+}
