@@ -3,3 +3,7 @@ venv_mlops/
 *.csv
 4o\ Semestre/eml1/at2.1/classificador1/
 4o\ Semestre/eml1/at2.2/http-api-flask/
+4o\ Semestre/eml1/at2.2.4/venv_api_classificacao/
+4o\ Semestre/eml1/at2.3.1/chatbot/
+4o\ Semestre/eml1/at2.3.2/analise-sentimentos/
+*.bin
