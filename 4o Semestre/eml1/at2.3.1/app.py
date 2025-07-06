@@ -1,7 +1,9 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from kafka import KafkaProducer
 import uuid
 import nltk
+import json
 
 # Download necessário para o bot
 nltk.download('punkt_tab')
@@ -11,6 +13,10 @@ sessao = uuid.uuid4()
 nome_bot = "Robô"
 chatbot = ChatBot(nome_bot, read_only=True)
 
+# Configuração do Kafka
+producer = KafkaProducer(bootstrap_servers='localhost:9092',
+                        value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+topico = 'chatbot'
 # Treinando o robô
 trainer = ChatterBotCorpusTrainer(chatbot)
 trainer.train(
@@ -28,6 +34,15 @@ while True:
 
     # Envia pergunta ao chatbot e obtém resposta
     resposta = chatbot.get_response(pergunta)
+
+    # Monta o evento e envia ao Kafka
+    evento = {
+        'sessao':str(sessao),
+        'nome':nome,
+        'pergunta':pergunta,
+        'resposta':str(resposta)
+    }
+    producer.send(topico, evento)
 
     # Imprime a conversa na tela
     print(nome_bot+': '+str(resposta)+'\n')
