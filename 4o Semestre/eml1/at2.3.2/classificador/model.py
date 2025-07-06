@@ -28,7 +28,7 @@ class Model:
                                         truncation=True,
                                         padding="max_length",
                                         add_special_tokens = True,
-                                        return_token_type_ids = False,
+                                        return_token_type_ids = False, 
                                         return_attention_mask = True,
                                         return_tensors = "pt")
         input_ids = encoded_text["input_ids"].to(self.device)
