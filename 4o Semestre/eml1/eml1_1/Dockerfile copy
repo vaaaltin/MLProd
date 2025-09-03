@@ -1,0 +1,29 @@
+# Usa especificamente a imagem do python 3.12
+# FROM python:3
+
+#cria e utiliza uma variavel
+ARG variavel_argumento
+
+RUN echo variavel_argumento
+
+# instala o projeto em '/app'
+WORKDIR /app
+
+# copia primeiramente os requirements para otimização de camadas
+# COPY requirements.txt ./
+
+RUN echo "Instalando requirements..."
+# RUN pip install --no-cache-dir -r requirements.txt
+RUN echo "Requirements instalado!"
+
+#copia um arquivo para a pasta principal
+COPY ./arquivoqualquer ./
+
+#roda o arquivo
+RUN cat arquivoqualquer
+
+# copia o restante do folder
+# COPY . .
+
+#executa a o script
+# CMD ["python", "./script.py"]
